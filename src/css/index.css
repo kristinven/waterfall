@@ -1,0 +1,35 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+html,body,.wrapper{
+	width: 100%;
+}
+.wrapper ul{
+	width: 880px;
+	margin: 0 auto;
+}
+.wrapper ul::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.wrapper ul li{
+	float: left;
+	width: 220px;
+}
+.wrapper ul li .item{
+	width: 200px;
+	margin: 0 auto 5px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.wrapper ul li .item img{
+	width: 202px;
+	margin: -1px;
+}
+.wrapper ul li .item p{
+	padding: 5px;
+}

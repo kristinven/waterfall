@@ -1,5 +1,5 @@
 var oLi = document.getElementsByTagName('li');
-	page = 1;
+	page = 0;
 	flag =true;
 
 function ajaxFun(){
@@ -11,10 +11,12 @@ function ajaxFun(){
 			 type: 'GET',
 			 // url: '/waterfall/getPics.php',
 			 // url: 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=dg&cb=dg',
-			 url: 'https://api.douban.com/v2/movie/search',
-			 data: 'q=xm',
+			//  url: 'https://api.douban.com/v2/movie/search',
+			//  data: 'q=xm',
+			 url: 'http://www.wookmark.com/api/json/popular',
+			 data: 'page=' + page,
 			 dataType: 'jsonp',
-			 success: showData,
+			 success: getData,
 			 error: function(data){
 			 	console.log(data);
 			 },
@@ -27,13 +29,13 @@ function ajaxFun(){
 // function dg(data){
 // 	console.log(data);
 // }
-function showData(data){
-	console.log(data);
-	console.log(this);
-}
+// function showData(data){
+// 	console.log(data);
+// 	console.log(this);
+// }
 ajaxFun();
 function getData(data){
-	var value = JSON.parse(data);
+	var value = data;
 	if(value.length > 0){
 		value.forEach(function(ele, index) {
 			var minIndex = minListIndex(oLi);
